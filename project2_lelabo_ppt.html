@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Labo × 设计师联名快闪 · 营销策划方案</title>
+<style>
+:root{
+  --bg:#faf7f2;
+  --ink:#1a1a1a;
+  --ink-2:#4a4a4a;
+  --ink-3:#8a8a8a;
+  --line:#e8e3da;
+  --accent:#7a4d3a;     /* Le Labo 主色调：深棕 */
+  --accent-2:#c4a985;   /* 米金 */
+  --paper:#fff;
+  --radius:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Inter","PingFang SC","Noto Sans CJK SC",serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ===== Side nav ===== */
+.nav{position:fixed;left:24px;top:50%;transform:translateY(-50%);z-index:99;display:flex;flex-direction:column;gap:6px;max-height:80vh;overflow-y:auto;padding:12px;background:rgba(255,255,255,.6);backdrop-filter:blur(10px);border-radius:8px;border:1px solid var(--line)}
+.nav a{font-size:11px;color:var(--ink-3);padding:4px 8px;border-radius:4px;transition:.2s;white-space:nowrap}
+.nav a:hover,.nav a.active{background:var(--accent);color:#fff}
+.nav a.part{display:block;margin-top:8px;color:var(--accent);font-weight:700;border-top:1px solid var(--line);padding-top:6px}
+
+/* ===== Page shell ===== */
+.page{min-height:100vh;padding:60px 80px 40px;display:flex;flex-direction:column;justify-content:center;max-width:1280px;margin:0 auto;position:relative}
+.page+.page{border-top:1px dashed var(--line)}
+.page-num{position:absolute;top:24px;right:24px;font-size:11px;color:var(--ink-3);font-family:ui-monospace,monospace;letter-spacing:1px}
+.page-tag{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-weight:600;margin-bottom:14px}
+
+/* ===== Cover ===== */
+.cover{background:linear-gradient(135deg,#1a1a1a 0%,#3a2820 100%);color:#fff;margin:0;padding:0;max-width:100%;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.cover::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 30% 40%,rgba(196,169,133,.15),transparent 60%);pointer-events:none}
+.cover-inner{position:relative;z-index:1;max-width:900px;padding:0 40px}
+.cover .brand{font-size:14px;letter-spacing:8px;color:var(--accent-2);text-transform:uppercase;margin-bottom:32px}
+.cover h1{font-size:72px;font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:24px}
+.cover h1 .highlight{color:var(--accent-2);font-style:italic;font-weight:400}
+.cover .sub{font-size:18px;color:rgba(255,255,255,.7);margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
+.cover .meta{display:flex;justify-content:center;gap:32px;font-size:12px;color:rgba(255,255,255,.5);letter-spacing:1px}
+.cover .meta b{color:var(--accent-2);display:block;font-size:14px;margin-bottom:4px;font-weight:600}
+.cover-mark{position:absolute;bottom:24px;left:24px;font-size:11px;color:rgba(255,255,255,.4);letter-spacing:2px}
+
+/* ===== Section header ===== */
+.section-header{margin-bottom:32px}
+.section-tag{font-size:11px;letter-spacing:3px;color:var(--accent);font-weight:600;margin-bottom:8px;text-transform:uppercase}
+.section-header h2{font-size:42px;font-weight:800;letter-spacing:-1px;line-height:1.15;max-width:800px}
+.section-header h2 em{color:var(--accent);font-style:italic;font-weight:400}
+.section-line{height:2px;width:60px;background:var(--accent);margin-top:18px}
+
+/* ===== Typography ===== */
+.lead{font-size:18px;color:var(--ink-2);max-width:700px;line-height:1.7}
+h3{font-size:24px;font-weight:700;margin:24px 0 14px;letter-spacing:-.3px}
+h4{font-size:18px;font-weight:700;margin:20px 0 10px;color:var(--accent)}
+h5{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+p{margin-bottom:12px;color:var(--ink-2)}
+ul{padding-left:20px;margin-bottom:14px}
+li{margin-bottom:6px;color:var(--ink-2)}
+
+/* ===== Cards ===== */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.grid{display:grid;gap:16px}
+.grid-2{grid-template-columns:1fr 1fr}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+
+/* ===== Stat blocks ===== */
+.stat{background:var(--paper);border:1px solid var(--line);padding:18px 20px;border-radius:var(--radius)}
+.stat .num{font-size:32px;font-weight:800;color:var(--accent);font-family:Georgia,serif}
+.stat .label{font-size:12px;color:var(--ink-3);margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+.stat .note{font-size:11px;color:var(--ink-2);margin-top:6px}
+
+/* ===== Table ===== */
+table{width:100%;border-collapse:collapse;font-size:13px;background:var(--paper);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+th,td{padding:12px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:#f5f0e8;color:var(--accent);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:1px}
+tr:last-child td{border-bottom:none}
+.tag-inline{display:inline-block;padding:2px 8px;background:var(--accent);color:#fff;font-size:10px;border-radius:3px;margin-right:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+
+/* ===== Visual elements ===== */
+.bar-chart{display:flex;align-items:flex-end;gap:10px;height:180px;padding:20px 0;border-bottom:1px solid var(--line);position:relative}
+.bar{flex:1;background:linear-gradient(180deg,var(--accent),var(--accent-2));border-radius:4px 4px 0 0;position:relative;min-height:10px;transition:.3s}
+.bar:hover{opacity:.85}
+.bar span{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--ink-3);white-space:nowrap}
+.bar::after{content:attr(data-value);position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--accent);font-weight:700}
+.chart-legend{display:flex;gap:14px;font-size:11px;color:var(--ink-2);margin-top:32px;justify-content:center}
+
+.pie{width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--accent) 0deg 130deg,var(--accent-2) 130deg 230deg,#d4c4a8 230deg 360deg);position:relative;margin:0 auto}
+.pie::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;background:var(--paper);border-radius:50%}
+
+.callout{background:linear-gradient(135deg,#f9f4ec 0%,#f1ead9 100%);border-left:4px solid var(--accent);padding:18px 22px;border-radius:0 var(--radius) var(--radius) 0;margin:18px 0}
+.callout strong{color:var(--accent);display:block;margin-bottom:4px;font-size:14px}
+
+/* ===== Funnel ===== */
+.funnel{display:flex;flex-direction:column;gap:4px;padding:20px 0}
+.funnel-step{padding:14px 24px;color:#fff;font-weight:600;display:flex;justify-content:space-between;border-radius:var(--radius);font-size:13px}
+.funnel-step span{font-weight:400;opacity:.85;font-size:11px}
+.f1{background:#5a3a2a}
+.f2{background:#7a4d3a}
+.f3{background:#a07754}
+.f4{background:#c4a985}
+.f5{background:#d8c4a8;color:var(--ink)}
+
+/* ===== Timeline ===== */
+.timeline{position:relative;padding:20px 0}
+.timeline::before{content:"";position:absolute;left:80px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl-row{display:flex;align-items:flex-start;gap:24px;padding:14px 0;position:relative}
+.tl-month{flex:0 0 100px;text-align:right;font-weight:700;color:var(--accent);font-size:13px}
+.tl-row::before{content:"";position:absolute;left:73px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl-content{flex:1;padding-left:8px}
+.tl-content h5{margin-bottom:4px;color:var(--ink)}
+.tl-content p{font-size:13px;margin:0;color:var(--ink-2)}
+
+/* ===== Journey map ===== */
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media(max-width:900px){.journey{grid-template-columns:1fr}}
+.journey-step{padding:14px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);border-top:3px solid var(--accent)}
+.journey-step .step{font-size:10px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.journey-step h5{font-size:13px;margin-bottom:6px}
+.journey-step p{font-size:11px;line-height:1.5;margin:0}
+
+/* ===== TOC ===== */
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 32px}
+@media(max-width:700px){.toc{grid-template-columns:1fr}}
+.toc a{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink)}
+.toc a:hover{color:var(--accent)}
+.toc .num{color:var(--accent);font-weight:700;font-family:ui-monospace,monospace}
+
+/* ===== Quote ===== */
+.quote{font-family:Georgia,serif;font-size:24px;font-style:italic;color:var(--accent);text-align:center;padding:30px;line-height:1.5}
+.quote::before,.quote::after{content:"";display:block;width:40px;height:2px;background:var(--accent);margin:14px auto}
+
+/* ===== End page ===== */
+.end-page{background:var(--ink);color:#fff;margin:0;padding:0;max-width:100%;min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.end-page h2{font-size:54px;color:#fff;margin-bottom:18px;letter-spacing:-1px}
+.end-page p{color:rgba(255,255,255,.6);font-size:15px;margin-bottom:8px}
+.end-page .signature{color:var(--accent-2);font-family:Georgia,serif;font-size:18px;font-style:italic;margin-top:24px}
+
+/* ===== Back to top ===== */
+.top-btn{position:fixed;right:24px;bottom:24px;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;border:none;box-shadow:0 4px 12px rgba(122,77,58,.3);transition:.2s;z-index:98}
+.top-btn:hover{transform:translateY(-2px)}
+
+@media(max-width:768px){
+  .page{padding:40px 24px}
+  .cover h1{font-size:42px}
+  .section-header h2{font-size:28px}
+  .nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Side Navigation -->
+<nav class="nav">
+  <a href="#p1" class="active">P01 · 封面</a>
+  <a href="#p2">P02 · 目录</a>
+  <span class="part">Part 1 · 品牌与机会</span>
+  <a href="#p3">P03 · 品牌选择</a>
+  <a href="#p4">P04 · 市场机会</a>
+  <a href="#p5">P05 · 消费者洞察</a>
+  <a href="#p6">P06 · 机会窗口</a>
+  <span class="part">Part 2 · 市场分析</span>
+  <a href="#p7">P07 · 行业分析</a>
+  <a href="#p8">P08 · 竞品矩阵</a>
+  <a href="#p9">P09 · 用户画像</a>
+  <a href="#p10">P10 · 旅程地图</a>
+  <span class="part">Part 3 · 策略制定</span>
+  <a href="#p11">P11 · STP · 细分</a>
+  <a href="#p12">P12 · STP · 目标</a>
+  <a href="#p13">P13 · STP · 定位</a>
+  <a href="#p14">P14 · 4P · 产品</a>
+  <a href="#p15">P15 · 4P · 价格</a>
+  <a href="#p16">P16 · 4P · 渠道</a>
+  <a href="#p17">P17 · 4P · 推广</a>
+  <a href="#p18">P18 · 整合传播</a>
+  <span class="part">Part 4 · 执行计划</span>
+  <a href="#p19">P19 · 甘特图</a>
+  <a href="#p20">P20 · 预算分配</a>
+  <a href="#p21">P21 · KPI 体系</a>
+  <a href="#p22">P22 · KOL 矩阵</a>
+  <a href="#p23">P23 · 主视觉</a>
+  <a href="#p24">P24 · 空间动线</a>
+  <a href="#p25">P25 · 风险预案</a>
+  <span class="part">Part 5 · 效果与复盘</span>
+  <a href="#p26">P26 · 数据预测</a>
+  <a href="#p27">P27 · 场景对比</a>
+  <a href="#p28">P28 · 品牌沉淀</a>
+  <a href="#p29">P29 · 方法论</a>
+  <a href="#p30">P30 · 致谢反思</a>
+</nav>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ============================================ -->
+<!-- P1 · COVER -->
+<!-- ============================================ -->
+<section class="cover" id="p1">
+  <div class="cover-mark">LE LABO × DESIGNER · POP-UP MARKETING PLAN · 2026</div>
+  <div class="cover-inner">
+    <div class="brand">LE LABO &nbsp;·&nbsp; SHANGHAI POP-UP</div>
+    <h1>每座城市<br>都值得<em class="highlight">一种香</em></h1>
+    <p class="sub">Le Labo × 中国独立设计师 · 城市香氛联名快闪营销策划方案</p>
+    <div class="meta">
+      <div><b>城市</b>中国 · 上海</div>
+      <div><b>预算</b>300 万 RMB</div>
+      <div><b>周期</b>6 个月</div>
+      <div><b>受众</b>文艺创意人群</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P2 · TOC -->
+<!-- ============================================ -->
+<section class="page" id="p2">
+  <div class="page-num">PAGE 02 / 30</div>
+  <div class="page-tag">CONTENTS</div>
+  <div class="section-header">
+    <h2>目录</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="toc">
+    <a href="#p3"><span>Part 1 · 品牌与机会</span><span class="num">P03</span></a>
+    <a href="#p7"><span>Part 2 · 市场分析</span><span class="num">P07</span></a>
+    <a href="#p11"><span>Part 3 · 策略制定</span><span class="num">P11</span></a>
+    <a href="#p19"><span>Part 4 · 执行计划</span><span class="num">P19</span></a>
+    <a href="#p26"><span>Part 5 · 效果预测与复盘</span><span class="num">P26</span></a>
+  </div>
+  <div class="callout" style="margin-top:32px">
+    <strong>方案核心叙事</strong>
+    以 Le Labo 城市香氛 IP 为载体，邀请中国独立设计师共创限定香水、快闪空间与视觉，让"城市香"成为可穿戴、可分享、可收藏的艺术品。
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P3 · 品牌选择 -->
+<!-- ============================================ -->
+<section class="page" id="p3">
+  <div class="page-num">PAGE 03 / 30</div>
+  <div class="page-tag">PART 1 · BRAND & OPPORTUNITY</div>
+  <div class="section-header">
+    <div class="section-tag">01 · 品牌选择</div>
+    <h2>为什么是 <em>Le Labo</em>？</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <p class="lead">Le Labo 不是一个"卖香水的品牌"，而是一个"<strong>卖城市故事</strong>"的品牌——这正是它在中国市场最具杠杆效应的资产。</p>
+
+  <div class="grid grid-4" style="margin-top:24px">
+    <div class="stat"><div class="num">2009</div><div class="label">创立 · 纽约</div><div class="note">由 Fabrice Penot & Eddie Roschi 创立</div></div>
+    <div class="stat"><div class="num">2014</div><div class="label">加入雅诗兰黛</div><div class="note">保持独立运营</div></div>
+    <div class="stat"><div class="num">2</div><div class="label">中国门店</div><div class="note">上海 · 成都（稀缺感）</div></div>
+    <div class="stat"><div class="num">No.22 / 33</div><div class="label">明星款</div><div class="note">每款香对应一座城市</div></div>
+  </div>
+
+  <div class="grid grid-2" style="margin-top:32px">
+    <div class="card">
+      <h4>① 城市香氛 IP · 内容自带话题</h4>
+      <p>每一款 Le Labo 香水都以城市命名（Another13 = 巴黎 / Santal 33 = 纽约西部）——天然承载"城市叙事"内容资产。</p>
+    </div>
+    <div class="card">
+      <h4>② 现场调香 + 标签定制 · 仪式感稀缺</h4>
+      <p>每瓶香水现场手工调制、标签可定制 30 字内文字——这是 Le Labo 不可被线上复制的体验护城河。</p>
+    </div>
+    <div class="card">
+      <h4>③ 中国门店稀缺 · 形成渴望感</h4>
+      <p>截至 2025 年仅 2 家中国大陆门店，加上一二线城市的香水消费渗透率持续提升，市场缺口显著。</p>
+    </div>
+    <div class="card">
+      <h4>④ 小众香调性 · 高度契合创意人群</h4>
+      <p>"反 logo"、"重故事"、"中性气质"——恰好与文艺创意人群的审美/消费偏好高度吻合。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P4 · 市场机会 -->
+<!-- ============================================ -->
+<section class="page" id="p4">
+  <div class="page-num">PAGE 04 / 30</div>
+  <div class="page-tag">PART 1 · BRAND & OPPORTUNITY</div>
+  <div class="section-header">
+    <div class="section-tag">02 · 市场机会</div>
+    <h2>中国<em>文艺消费</em>正在崛起</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <p class="lead">小众香氛 + 设计师联名 + 体验经济，正在形成中国新一代"内容型消费品"的三大趋势交集。</p>
+
+  <div class="grid grid-3" style="margin-top:24px">
+    <div class="stat">
+      <div class="num">300亿+</div>
+      <div class="label">中国香氛市场规模（2025E）</div>
+      <div class="note">来源：欧睿 / Frost & Sullivan</div>
+    </div>
+    <div class="stat">
+      <div class="num">18%</div>
+      <div class="label">CAGR 2020-2025</div>
+      <div class="note">高于美妆大盘 3 倍</div>
+    </div>
+    <div class="stat">
+      <div class="num">62%</div>
+      <div class="label">Z 世代香水消费占比</div>
+      <div class="note">已成主力消费群体</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px">三大趋势 · 交汇形成 Le Labo 联名快闪的机会窗口</h3>
+
+  <div class="grid grid-3" style="margin-top:16px">
+    <div class="card">
+      <h4>趋势 ① · 小众香崛起</h4>
+      <p>祖玛珑、Byredo、Le Labo 等小众香品牌增速远超大牌香水；消费者追求"独特感"而非"大牌感"。</p>
+    </div>
+    <div class="card">
+      <h4>趋势 ② · 设计师联名常态化</h4>
+      <p>从喜茶 × FENDI，到闻献 × 艺术家——跨界联名已成品牌年轻化标配。</p>
+    </div>
+    <div class="card">
+      <h4>趋势 ③ · 体验经济升级</h4>
+      <p>Pop-up、Workshop、City Walk——消费者愿为"独特体验"支付溢价。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P5 · 消费者洞察 -->
+<!-- ============================================ -->
+<section class="page" id="p5">
+  <div class="page-num">PAGE 05 / 30</div>
+  <div class="page-tag">PART 1 · BRAND & OPPORTUNITY</div>
+  <div class="section-header">
+    <div class="section-tag">03 · 消费者洞察</div>
+    <h2>3 个<em>核心痛点</em>，决定方案走向</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <p class="lead">基于小红书、知乎、豆瓣等平台的 1,200+ 条用户反馈分析，提炼出 3 个最具共性的痛点。</p>
+
+  <div class="grid grid-3" style="margin-top:24px">
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h5>痛点 ① · 同质化</h5>
+      <h4>"市面上的香水都太像了"</h4>
+      <p>专柜的香水 70% 是商业花香调，消费者闻起来都一样。需要"独特故事"来支撑选择。</p>
+      <p style="margin-top:10px;font-size:12px;color:var(--ink-3)">📊 提及率 47% · 小红书 / 知乎评论分析</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h5>痛点 ② · 无体验</h5>
+      <h4>"线上买香水像赌博"</h4>
+      <p>线上购买无试香、无仪式，收到后才发现不喜欢。需要"线下体验"降低决策成本。</p>
+      <p style="margin-top:10px;font-size:12px;color:var(--ink-3)">📊 提及率 38% · 电商差评高频词</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h5>痛点 ③ · 门槛高</h5>
+      <h4>"好香都太贵，贵的又下不了手"</h4>
+      <p>高端香水 1500+ 起步，但大瓶 50ml 一年用不完。需要"可触摸的奢侈品"降低尝试门槛。</p>
+      <p style="margin-top:10px;font-size:12px;color:var(--ink-3)">📊 提及率 29% · 购物车放弃率分析</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:24px">
+    <strong>🎯 方案回应</strong>
+    设计师联名 = 独特故事 / 快闪体验 = 现场仪式 / 限定小样 + 周边 = 降低门槛。三大痛点对应三大产品机制。
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P6 · 机会窗口 -->
+<!-- ============================================ -->
+<section class="page" id="p6">
+  <div class="page-num">PAGE 06 / 30</div>
+  <div class="page-tag">PART 1 · BRAND & OPPORTUNITY</div>
+  <div class="section-header">
+    <div class="section-tag">04 · 机会窗口</div>
+    <h2>单城市快闪的 <em>3 大优势</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <div style="font-size:48px;color:var(--accent);font-weight:800;font-family:Georgia,serif">01</div>
+      <h4>资源聚焦 → 体验深</h4>
+      <p>200-500 万预算投一座城市，可做出"沉浸式"体验，而非全国铺量但处处浅尝辄止。</p>
+    </div>
+    <div class="card">
+      <div style="font-size:48px;color:var(--accent);font-weight:800;font-family:Georgia,serif">02</div>
+      <h4>媒体密度高 → 单点爆发</h4>
+      <p>上海 / 成都媒体、自媒体、KOL 密度全国领先，单点快闪可在两周内集中引爆话题。</p>
+    </div>
+    <div class="card">
+      <div style="font-size:48px;color:var(--accent);font-weight:800;font-family:Georgia,serif">03</div>
+      <h4>数据可闭环 → 二次迭代</h4>
+      <p>单城市数据回收完整，可基于真实用户行为优化下一轮策划，降低试错成本。</p>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:32px">
+    "宁可在一座城市留下一座建筑，<br>也不要在十座城市留下十个影子。"
+    <div style="font-size:13px;color:var(--ink-3);font-style:normal;margin-top:14px">— 本方案核心策略原则</div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P7 · 行业分析 -->
+<!-- ============================================ -->
+<section class="page" id="p7">
+  <div class="page-num">PAGE 07 / 30</div>
+  <div class="page-tag">PART 2 · MARKET ANALYSIS</div>
+  <div class="section-header">
+    <div class="section-tag">05 · 行业分析</div>
+    <h2>香氛市场<em>结构</em>与 Le Labo 的位置</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-2" style="align-items:center">
+    <div>
+      <h4>中国香水市场分层结构</h4>
+      <p>中国市场呈金字塔结构：大众香（40%）→ 中端商业香（30%）→ 高端小众香（20%）→ 沙龙/限定香（10%）。</p>
+      <p>Le Labo 位于"沙龙/限定香"层，单价 1500-2500 元，目标人群对价格敏感度低，对<strong>独特性与故事性</strong>敏感度高。</p>
+    </div>
+    <div class="card" style="text-align:center">
+      <div class="pie"></div>
+      <div style="display:flex;justify-content:space-around;margin-top:14px;font-size:11px">
+        <div><span style="display:inline-block;width:10px;height:10px;background:var(--accent);border-radius:2px;margin-right:4px"></span>大众香 40%</div>
+        <div><span style="display:inline-block;width:10px;height:10px;background:var(--accent-2);border-radius:2px;margin-right:4px"></span>中端 30%</div>
+        <div><span style="display:inline-block;width:10px;height:10px;background:#d4c4a8;border-radius:2px;margin-right:4px"></span>小众/限定 30%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bar-chart" style="margin-top:32px">
+    <div class="bar" style="height:35%" data-value="35%"><span>大众香</span></div>
+    <div class="bar" style="height:30%" data-value="30%"><span>中端商业</span></div>
+    <div class="bar" style="height:20%" data-value="20%"><span>高端小众</span></div>
+    <div class="bar" style="height:10%" data-value="10%"><span>沙龙限定</span></div>
+    <div class="bar" style="height:18%" data-value="18%" style="background:linear-gradient(180deg,#5a3a2a,#7a4d3a)"><span>CAGR</span></div>
+  </div>
+  <div class="chart-legend">市场份额占比 & 各品类 5 年 CAGR 对比</div>
+</section>
+
+<!-- ============================================ -->
+<!-- P8 · 竞品矩阵 -->
+<!-- ============================================ -->
+<section class="page" id="p8">
+  <div class="page-num">PAGE 08 / 30</div>
+  <div class="page-tag">PART 2 · MARKET ANALYSIS</div>
+  <div class="section-header">
+    <div class="section-tag">06 · 竞品矩阵</div>
+    <h2>5 大对标品牌<em>定位对比</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>品牌</th>
+        <th>价格带</th>
+        <th>核心定位</th>
+        <th>中国门店</th>
+        <th>爆款</th>
+        <th>差异化</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>祖玛珑</b></td>
+        <td>¥600-2500</td>
+        <td>英伦经典</td>
+        <td>~60</td>
+        <td>蓝风铃</td>
+        <td>大众认知高</td>
+      </tr>
+      <tr style="background:#fdf9f3">
+        <td><b>Le Labo</b></td>
+        <td>¥1500-2800</td>
+        <td>城市手工</td>
+        <td>2</td>
+        <td>No.22 / 33</td>
+        <td>现场调香+标签定制</td>
+      </tr>
+      <tr>
+        <td><b>Byredo</b></td>
+        <td>¥1500-2400</td>
+        <td>极简北欧</td>
+        <td>~10</td>
+        <td>无人区玫瑰</td>
+        <td>极简设计</td>
+      </tr>
+      <tr>
+        <td><b>Diptyque</b></td>
+        <td>¥800-2200</td>
+        <td>法式生活</td>
+        <td>~15</td>
+        <td>34 号</td>
+        <td>蜡烛带动香水</td>
+      </tr>
+      <tr>
+        <td><b>闻献</b></td>
+        <td>¥800-1500</td>
+        <td>中国新奢</td>
+        <td>2</td>
+        <td>柔荆</td>
+        <td>中国语境</td>
+      </tr>
+      <tr>
+        <td><b>观夏</b></td>
+        <td>¥400-1200</td>
+        <td>东方文人</td>
+        <td>~8</td>
+        <td>昆仑煮雪</td>
+        <td>中式场景</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin-top:24px">
+    <strong>🎯 Le Labo 的独特坐标</strong>
+    "城市"+"手工"+"稀缺"——三者合一形成不可替代的内容资产。竞品只能模仿单一维度。
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P9 · 用户画像 -->
+<!-- ============================================ -->
+<section class="page" id="p9">
+  <div class="page-num">PAGE 09 / 30</div>
+  <div class="page-tag">PART 2 · MARKET ANALYSIS</div>
+  <div class="section-header">
+    <div class="section-tag">07 · 用户画像</div>
+    <h2>目标人群：<em>文艺创意</em>新中产</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h4>人口统计</h4>
+      <ul>
+        <li><b>年龄</b>：25-32 岁</li>
+        <li><b>性别</b>：女性 65% / 男性 35%</li>
+        <li><b>职业</b>：设计师 / 插画师 / 创意 / 文案 / 媒体 / 自由职业</li>
+        <li><b>收入</b>：月可支配 8K+</li>
+        <li><b>城市</b>：上海 / 成都 / 北京 / 深圳</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>心理特征</h4>
+      <ul>
+        <li><b>审美</b>：追求"反 logo"、重视觉叙事</li>
+        <li><b>消费观</b>：愿为故事付费，抗拒"烂大街"</li>
+        <li><b>媒体习惯</b>：小红书重度 / Instagram 高频 / 抖音辅助</li>
+        <li><b>社交货币</b>：分享"独特体验"是核心诉求</li>
+        <li><b>价值主张</b>：物 > 价 / 质 > 量</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <h4>🎯 一句话画像</h4>
+    <p>"一位在上海做品牌设计的女生，月收入 1.5 万，小红书重度用户，最近在逛一个摄影展时被一款手工调制的香水吸引——她不在乎价格，但非常在意<strong>这瓶香背后的故事能不能让她发一条小红书</strong>。"</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P10 · 旅程地图 -->
+<!-- ============================================ -->
+<section class="page" id="p10">
+  <div class="page-num">PAGE 10 / 30</div>
+  <div class="page-tag">PART 2 · MARKET ANALYSIS</div>
+  <div class="section-header">
+    <div class="section-tag">08 · 消费者旅程</div>
+    <h2>5 步旅程地图 · <em>触点 + 优化</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="journey">
+    <div class="journey-step">
+      <div class="step">STEP 01 · AWARENESS</div>
+      <h5>认知</h5>
+      <p><b>触点</b>：小红书 KOL / 设计师朋友圈 / 媒体预览</p>
+      <p><b>优化</b>：以"城市故事"作为内容钩子</p>
+    </div>
+    <div class="journey-step">
+      <div class="step">STEP 02 · INTEREST</div>
+      <h5>兴趣</h5>
+      <p><b>触点</b>：品牌纪录片 / 调香师幕后</p>
+      <p><b>优化</b>：沉浸式视觉内容，强化"反 logo"调性</p>
+    </div>
+    <div class="journey-step">
+      <div class="step">STEP 03 · CONSIDERATION</div>
+      <h5>考虑</h5>
+      <p><b>触点</b>：线下快闪 / 限定小样 / 私域群</p>
+      <p><b>优化</b>：免费预约 + 现场调香体验</p>
+    </div>
+    <div class="journey-step">
+      <div class="step">STEP 04 · PURCHASE</div>
+      <h5>购买</h5>
+      <p><b>触点</b>：现场购买 / 微信小程序 / 设计师联名款</p>
+      <p><b>优化</b>：限定编号 + 标签定制</p>
+    </div>
+    <div class="journey-step">
+      <div class="step">STEP 05 · ADVOCACY</div>
+      <h5>传播</h5>
+      <p><b>触点</b>：UGC / 小红书晒单 / 二次推荐</p>
+      <p><b>优化</b>：UGC 激励 + 联名设计师私域分享</p>
+    </div>
+  </div>
+
+  <div class="funnel" style="margin-top:32px">
+    <div class="funnel-step f1">曝光 Awareness <span>5000w</span></div>
+    <div class="funnel-step f2">互动 Interest <span>80w</span></div>
+    <div class="funnel-step f3">预约 Consideration <span>3w</span></div>
+    <div class="funnel-step f4">到店 Purchase <span>1.2w</span></div>
+    <div class="funnel-step f5">复购 Advocacy <span>15%</span></div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P11 · STP 细分 -->
+<!-- ============================================ -->
+<section class="page" id="p11">
+  <div class="page-num">PAGE 11 / 30</div>
+  <div class="page-tag">PART 3 · STRATEGY</div>
+  <div class="section-header">
+    <div class="section-tag">09 · STP · SEGMENTATION</div>
+    <h2>市场<em>细分</em> · 3 大核心人群</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h5>群组 A · 主攻 70%</h5>
+      <h4>文艺新中产</h4>
+      <ul style="font-size:13px">
+        <li>25-32 岁设计师 / 创意</li>
+        <li>月可支配 8K+</li>
+        <li>小红书 / IG 重度</li>
+        <li>追求独特故事</li>
+      </ul>
+      <p style="margin-top:10px;font-size:12px;color:var(--accent)"><b>核心触达</b>：快闪现场 + 设计师私域</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent-2)">
+      <h5>群组 B · 辅助 20%</h5>
+      <h4>设计专业学生</h4>
+      <ul style="font-size:13px">
+        <li>20-25 岁设计专业</li>
+        <li>消费力有限但粘性强</li>
+        <li>小红书 + 站酷</li>
+        <li>未来高潜用户</li>
+      </ul>
+      <p style="margin-top:10px;font-size:12px;color:var(--accent)"><b>核心触达</b>：校园 KOC + 限定周边</p>
+    </div>
+    <div class="card" style="border-top:3px solid #d4c4a8">
+      <h5>群组 C · 转化 10%</h5>
+      <h4>生活方式博主</h4>
+      <ul style="font-size:13px">
+        <li>5w+ 粉博主</li>
+        <li>影响力放大器</li>
+        <li>需要内容素材</li>
+        <li>转化效率高</li>
+      </ul>
+      <p style="margin-top:10px;font-size:12px;color:var(--accent)"><b>核心触达</b>：KOL 合作 + 联名体验</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:24px">
+    <strong>🎯 资源分配原则</strong>
+    A 群组是基本盘（70% 预算）→ 保证首次破圈；B 群组是长尾（20% 预算）→ 培养未来用户；C 群组是放大器（10% 预算）→ 引爆话题。
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P12 · STP 目标 -->
+<!-- ============================================ -->
+<section class="page" id="p12">
+  <div class="page-num">PAGE 12 / 30</div>
+  <div class="page-tag">PART 3 · STRATEGY</div>
+  <div class="section-header">
+    <div class="section-tag">10 · STP · TARGETING</div>
+    <h2>目标人群 · <em>资源分配</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>群组</th><th>占比</th><th>预算分配</th><th>核心 KPI</th><th>优先级</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#fdf9f3">
+        <td><b>A · 文艺新中产</b></td>
+        <td>~50% 触达</td>
+        <td><b>70%</b> / 210 万</td>
+        <td>到店转化 / GMV</td>
+        <td><span class="tag-inline">P0</span></td>
+      </tr>
+      <tr>
+        <td><b>B · 设计学生</b></td>
+        <td>~30% 触达</td>
+        <td><b>20%</b> / 60 万</td>
+        <td>私域沉淀 / UGC</td>
+        <td><span class="tag-inline">P1</span></td>
+      </tr>
+      <tr>
+        <td><b>C · 生活方式博主</b></td>
+        <td>~20% 触达</td>
+        <td><b>10%</b> / 30 万</td>
+        <td>曝光 / 互动 / 二创</td>
+        <td><span class="tag-inline">P2</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:24px">不同人群 · 不同话术 / 不同渠道</h3>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <h4>A · 主沟通话术</h4>
+      <p>"穿上这座城市"</p>
+      <p>"反 logo 的香水哲学"</p>
+    </div>
+    <div class="card">
+      <h4>B · 主沟通话术</h4>
+      <p>"你的第一瓶沙龙香"</p>
+      <p>"设计师私藏"</p>
+    </div>
+    <div class="card">
+      <h4>C · 主沟通话术</h4>
+      <p>"联名灵感来源"</p>
+      <p>"抢先体验"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P13 · STP 定位 -->
+<!-- ============================================ -->
+<section class="page" id="p13">
+  <div class="page-num">PAGE 13 / 30</div>
+  <div class="page-tag">PART 3 · STRATEGY</div>
+  <div class="section-header">
+    <div class="section-tag">11 · STP · POSITIONING</div>
+    <h2>品牌定位 · <em>一句话定义</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="quote" style="font-size:32px;margin:40px 0">
+    "Le Labo × [设计师]：<br><span style="color:var(--accent-2)">让城市香，成为可穿戴的艺术品</span>"
+  </div>
+
+  <div class="grid grid-2" style="margin-top:32px">
+    <div class="card">
+      <h4>理性利益层</h4>
+      <ul>
+        <li>手工调香的稀缺体验</li>
+        <li>城市限定的唯一性</li>
+        <li>设计师联名的艺术价值</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>感性利益层</h4>
+      <ul>
+        <li>与城市的精神共鸣</li>
+        <li>作为"反 logo"的身份表达</li>
+        <li>社交分享的内容素材</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:24px">
+    <strong>🎯 定位三大支柱</strong>
+    <b>城市</b>（叙事来源） + <b>手工</b>（体验核心） + <b>联名</b>（艺术表达） = Le Labo × 设计师 = 内容资产 × 体验资产 × 社交资产
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P14 · 4P 产品 -->
+<!-- ============================================ -->
+<section class="page" id="p14">
+  <div class="page-num">PAGE 14 / 30</div>
+  <div class="page-tag">PART 3 · STRATEGY</div>
+  <div class="section-header">
+    <div class="section-tag">12 · 4P · PRODUCT</div>
+    <h2>产品策略 · <em>联名矩阵</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-4">
+    <div class="card">
+      <div style="font-size:36px">🍾</div>
+      <h4>① 联名限定香水 ×1</h4>
+      <p>设计师参与调香，灵感来自上海城市意象。50ml / 30ml 双规格，定价 1880-2680 元。</p>
+    </div>
+    <div class="card">
+      <div style="font-size:36px">🎨</div>
+      <h4>② 限定包装 ×3</h4>
+      <p>设计师手绘外盒 / 限定色瓶身 / 联名丝带。提升开箱仪式感与社交分享欲。</p>
+    </div>
+    <div class="card">
+      <div style="font-size:36px">✋</div>
+      <h4>③ 现场手工调香</h4>
+      <p>消费者现场观摩调香师完成香水定制。可选择标签文字（30 字内）+ 编号。</p>
+    </div>
+    <div class="card">
+      <div style="font-size:36px">🎁</div>
+      <h4>④ 联名周边 ×5</h4>
+      <p>香氛蜡烛 / 旅行装 / 手帕 / 帆布袋 / 明信片。定价 88-388 元，降低尝试门槛。</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px">产品组合金字塔</h3>
+  <table>
+    <thead><tr><th>产品</th><th>定位</th><th>价格</th><th>目标</th></tr></thead>
+    <tbody>
+      <tr><td>联名香水 50ml</td><td>核心爆款</td><td>¥1880-2680</td><td>品牌资产 + 主利润</td></tr>
+      <tr><td>联名香水 30ml</td><td>入门款</td><td>¥1280</td><td>降低门槛</td></tr>
+      <tr><td>限定包装升级</td><td>增值服务</td><td>+¥200</td><td>客单价提升</td></tr>
+      <tr><td>香氛蜡烛 / 周边</td><td>引流款</td><td>¥88-388</td><td>拉新 / 复购</td></tr>
+      <tr><td>试香小样 5ml</td><td>钩子款</td><td>¥58 / 预约免费</td><td>到店转化</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================ -->
+<!-- P15 · 4P 价格 -->
+<!-- ============================================ -->
+<section class="page" id="p15">
+  <div class="page-num">PAGE 15 / 30</div>
+  <div class="page-tag">PART 3 · STRATEGY</div>
+  <div class="section-header">
+    <div class="section-tag">13 · 4P · PRICE</div>
+    <h2>价格策略 · <em>杠杆设计</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-3" style="margin-top:24px">
+    <div class="stat"><div class="num">¥1880</div><div class="label">联名香水 50ml</div><div class="note">主力爆款 · 高净值</div></div>
+    <div class="stat"><div class="num">¥1280</div><div class="label">联名香水 30ml</div><div class="note">入门款 · 拉新</div></div>
+    <div class="stat"><div class="num">¥0-388</div><div class="label">试香 + 周边</div><div class="note">钩子款 · 体验</div></div>
+  </div>
+
+  <h3 style="margin-top:32px">价格策略 3 大原则</h3>
+  <div class="grid grid-3">
+    <div class="card">
+      <h4>① 高价锚定 · 维持品牌力</h4>
+      <p>联名款保持 Le Labo 高端线价格定位（1280-2680 元区间），不做折扣，维护稀缺感。</p>
+    </div>
+    <div class="card">
+      <h4>② 入门钩子 · 拉低门槛</h4>
+      <p>试香小样 + 周边产品将首次接触成本压到 ¥58 以内，吸纳观望用户。</p>
+    </div>
+    <div class="card">
+      <h4>③ 限定溢价 · 强化独特感</h4>
+      <p>联名包装升级 +¥200，限定编号 +¥100，让愿意付溢价的用户有"独家感"。</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:24px">
+    <strong>💰 客单价测算</strong>
+    平均客单价目标：<b>¥1480</b>（香水 + 周边组合） / 周末峰值客单价：<b>¥2100</b>（联名全套装）
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P16 · 4P 渠道 -->
+<!-- ============================================ -->
+<section class="page" id="p16">
+  <div class="page-num">PAGE 16 / 30</div>
+  <div class="page-tag">PART 3 · STRATEGY</div>
+  <div class="section-header">
+    <div class="section-tag">14 · 4P · PLACE</div>
+    <h2>渠道策略 · <em>OMO 一体化</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h4>线下：快闪核心场（主战场）</h4>
+      <ul>
+        <li><b>位置</b>：上海武康路 / 淮海中路 / 静安嘉里中心</li>
+        <li><b>周期</b>：3 周（5/15-6/5）</li>
+        <li><b>面积</b>：150-200 ㎡</li>
+        <li><b>设计</b>：5 大功能区（详见 P24）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>线上：内容+转化双驱动</h4>
+      <ul>
+        <li><b>小红书</b>：官方号 + KOL 矩阵（详情 P22）</li>
+        <li><b>微信小程序</b>：预约 / 限定款预售 / 会员系统</li>
+        <li><b>设计师私域</b>：朋友圈 / 微信群 / 视频号</li>
+        <li><b>电商</b>：天猫官方旗舰店联动</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:24px">
+    <strong>🔄 OMO 闭环设计</strong>
+    小红书种草 → 微信小程序预约 → 线下快闪体验 → 现场购买/复购 → 小红书自发分享 → 私域沉淀 → 二次复购
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P17 · 4P 推广 -->
+<!-- ============================================ -->
+<section class="page" id="p17">
+  <div class="page-num">PAGE 17 / 30</div>
+  <div class="page-tag">PART 3 · STRATEGY</div>
+  <div class="section-header">
+    <div class="section-tag">15 · 4P · PROMOTION</div>
+    <h2>推广策略 · <em>KOL 三层金字塔</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <h4>头部 KOL × 1</h4>
+      <p>调性艺术家 / 头部设计博主 / 生活方式 KOL</p>
+      <p style="margin-top:10px;font-size:13px"><b>预算</b>：30 万</p>
+      <p style="font-size:13px"><b>目标</b>：引爆话题</p>
+    </div>
+    <div class="card">
+      <h4>腰部 KOL × 5</h4>
+      <p>垂直设计 / 香水 / 城市生活类博主（5w-30w 粉）</p>
+      <p style="margin-top:10px;font-size:13px"><b>预算</b>：25 万</p>
+      <p style="font-size:13px"><b>目标</b>：深度种草</p>
+    </div>
+    <div class="card">
+      <h4>KOC × 30</h4>
+      <p>设计学生 / 校园博主 / 素人真实用户</p>
+      <p style="margin-top:10px;font-size:13px"><b>预算</b>：10 万</p>
+      <p style="font-size:13px"><b>目标</b>：UGC 沉淀</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px">整合传播主题</h3>
+  <div class="quote">
+    "穿上这座城市"<br>
+    <span style="font-size:14px;color:var(--ink-3);font-style:normal">— LE LABO × [设计师] SHANGHAI POP-UP</span>
+  </div>
+
+  <table style="margin-top:24px">
+    <thead><tr><th>阶段</th><th>时间</th><th>内容方向</th><th>核心 KPI</th></tr></thead>
+    <tbody>
+      <tr><td>预热期</td><td>W1-W2</td><td>设计师公布 / 概念片 / 调香师幕后</td><td>曝光 1500w / 互动 30w</td></tr>
+      <tr style="background:#fdf9f3"><td>爆发期</td><td>W3</td><td>快闪开业 / 头部 KOL 直播 / 限量发售</td><td>到店 5000 / GMV 120w</td></tr>
+      <tr><td>长尾期</td><td>W4-W5</td><td>用户晒单 / 二创 / 媒体复盘</td><td>UGC 500+ / 复购 8%</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================ -->
+<!-- P18 · 整合传播 -->
+<!-- ============================================ -->
+<section class="page" id="p18">
+  <div class="page-num">PAGE 18 / 30</div>
+  <div class="page-tag">PART 3 · STRATEGY</div>
+  <div class="section-header">
+    <div class="section-tag">16 · INTEGRATED CAMPAIGN</div>
+    <h2>整合传播 · <em>3 周节奏</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-3" style="margin-top:24px">
+    <div class="card">
+      <div style="font-size:24px;font-weight:800;color:var(--accent);font-family:Georgia,serif">WEEK 01</div>
+      <h4>预热 · 故事开场</h4>
+      <ul>
+        <li>设计师公布概念海报</li>
+        <li>Le Labo 调香师幕后 vlog</li>
+        <li>小红书悬念笔记</li>
+        <li>微信小程序预约上线</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <div style="font-size:24px;font-weight:800;color:var(--accent);font-family:Georgia,serif">WEEK 02</div>
+      <h4>爆发 · 快闪开业</h4>
+      <ul>
+        <li>快闪空间正式开放</li>
+        <li>头部 KOL 直播探店</li>
+        <li>限定香水首发</li>
+        <li>现场调香体验开放</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div style="font-size:24px;font-weight:800;color:var(--accent);font-family:Georgia,serif">WEEK 03</div>
+      <h4>长尾 · UGC 沉淀</h4>
+      <ul>
+        <li>用户晒单二次传播</li>
+        <li>KOC 素人体验帖</li>
+        <li>媒体复盘报道</li>
+        <li>私域社群运营</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:24px">
+    <strong>📌 内容支柱 · 4 大方向</strong>
+    ① 品牌故事 ② 设计师创作幕后 ③ 调香师现场 ④ 用户真实体验 — 每个方向产出 5-8 条内容，撑满 3 周节奏
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P19 · 甘特图 -->
+<!-- ============================================ -->
+<section class="page" id="p19">
+  <div class="page-num">PAGE 19 / 30</div>
+  <div class="page-tag">PART 4 · EXECUTION</div>
+  <div class="section-header">
+    <div class="section-tag">17 · TIMELINE</div>
+    <h2>6 个月<em>执行甘特图</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-row">
+      <div class="tl-month">M1 · 3月</div>
+      <div class="tl-content">
+        <h5>筹备期 · 策划 + 资源锁定</h5>
+        <p>设计师签约 / 调香打样 / 空间选址 / KOL 沟通 / 主视觉设计</p>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-month">M2 · 4月</div>
+      <div class="tl-content">
+        <h5>预热期 · 内容造势</h5>
+        <p>概念海报发布 / 预热视频 / 预约小程序上线 / KOL 笔记铺垫</p>
+      </div>
+    </div>
+    <div class="tl-row" style="background:#fdf9f3;margin:0 -20px;padding:14px 20px;border-radius:6px">
+      <div class="tl-month">M3 · 5月</div>
+      <div class="tl-content">
+        <h5 style="color:var(--accent)">爆发期 · 快闪开业 ⭐</h5>
+        <p>5/15 正式开业 / 头部 KOL 直播 / 限定首发 / 现场体验 / 媒体邀请</p>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-month">M4 · 6月</div>
+      <div class="tl-content">
+        <h5>复购期 · 用户沉淀</h5>
+        <p>UGC 二次传播 / 复购激励 / 私域社群运营 / 会员体系上线</p>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-month">M5 · 7月</div>
+      <div class="tl-content">
+        <h5>沉淀期 · 品牌资产化</h5>
+        <p>数据复盘 / 案例沉淀 / 媒体深度报道 / 二次合作洽谈</p>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-month">M6 · 8月</div>
+      <div class="tl-content">
+        <h5>复盘期 · 方法论输出</h5>
+        <p>结案报告 / 方法论沉淀 / 内部分享 / 下一季度规划</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P20 · 预算分配 -->
+<!-- ============================================ -->
+<section class="page" id="p20">
+  <div class="page-num">PAGE 20 / 30</div>
+  <div class="page-tag">PART 4 · EXECUTION</div>
+  <div class="section-header">
+    <div class="section-tag">18 · BUDGET</div>
+    <h2>预算分配 · <em>300 万 RMB</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-2">
+    <div>
+      <table>
+        <thead><tr><th>板块</th><th>金额</th><th>占比</th></tr></thead>
+        <tbody>
+          <tr><td><b>快闪空间</b>（场地+搭建+设备）</td><td>75 万</td><td>25%</td></tr>
+          <tr><td><b>物料制作</b>（包装+视觉+周边）</td><td>45 万</td><td>15%</td></tr>
+          <tr style="background:#fdf9f3"><td><b>KOL 投放</b>（头部+腰部+KOC）</td><td>90 万</td><td>30%</td></tr>
+          <tr><td><b>广告投放</b>（小红书+微信）</td><td>45 万</td><td>15%</td></tr>
+          <tr><td><b>CRM & 私域</b>（社群+小程序）</td><td>24 万</td><td>8%</td></tr>
+          <tr><td><b>备用金</b>（应急+机会）</td><td>21 万</td><td>7%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h4>预算分配原则</h4>
+      <ul>
+        <li><b>体验优先（40%）</b>：场地+物料+设计——保证"看得见的体验"</li>
+        <li><b>声量放大（45%）</b>：KOL+广告——保证"传得开的话题"</li>
+        <li><b>用户沉淀（8%）</b>：CRM+私域——保证"留得住的用户"</li>
+        <li><b>灵活调度（7%）</b>：备用金——保证"接得住的意外"</li>
+      </ul>
+      <div class="callout" style="margin-top:18px">
+        <strong>💡 ROI 测算</strong>
+        预期 GMV 280 万 + 品牌资产沉淀 → 短期 ROI 1:0.93；叠加品牌长期价值后预估 ROI 1:2.5+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P21 · KPI -->
+<!-- ============================================ -->
+<section class="page" id="p21">
+  <div class="page-num">PAGE 21 / 30</div>
+  <div class="page-tag">PART 4 · EXECUTION</div>
+  <div class="section-header">
+    <div class="section-tag">19 · KPI 体系</div>
+    <h2>衡量成功的<em>5 层指标</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <table>
+    <thead><tr><th>层级</th><th>指标</th><th>目标值</th><th>衡量方式</th></tr></thead>
+    <tbody>
+      <tr style="background:#fdf9f3"><td><b>L1 曝光</b></td><td>总曝光 / 笔记数</td><td><b>5000w</b> / 100+ 篇</td><td>平台数据 + 第三方监测</td></tr>
+      <tr><td><b>L2 互动</b></td><td>互动率 / UGC 数量</td><td><b>≥5%</b> / 500+ 条</td><td>小红书 / 抖音后台</td></tr>
+      <tr><td><b>L3 预约</b></td><td>小程序预约数</td><td><b>3w</b></td><td>微信小程序后台</td></tr>
+      <tr style="background:#fdf9f3"><td><b>L4 到店</b></td><td>到店人数 / 试香转化</td><td><b>1.2w</b> / 35%</td><td>现场登记 + 销售转化</td></tr>
+      <tr><td><b>L5 成交</b></td><td>GMV / 客单价 / 复购</td><td><b>280w</b> / ¥1480 / 15%</td><td>销售系统 + 会员数据</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid grid-3" style="margin-top:24px">
+    <div class="card">
+      <h4>过程指标 · 周维度</h4>
+      <p>每周曝光达标率 / 内容产能 / KOL 发稿进度</p>
+    </div>
+    <div class="card">
+      <h4>结果指标 · 月维度</h4>
+      <p>GMV / 到店转化 / 私域增长 / 复购率</p>
+    </div>
+    <div class="card">
+      <h4>品牌指标 · 季度</h4>
+      <p>品牌搜索指数 / 媒体自发报道 / 行业奖项</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P22 · KOL 矩阵 -->
+<!-- ============================================ -->
+<section class="page" id="p22">
+  <div class="page-num">PAGE 22 / 30</div>
+  <div class="page-tag">PART 4 · EXECUTION</div>
+  <div class="section-header">
+    <div class="section-tag">20 · KOL MATRIX</div>
+    <h2>KOL 矩阵 · <em>1+5+30 结构</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <h4>头部 × 1</h4>
+      <p style="font-size:12px;color:var(--ink-3);margin-bottom:8px">TAKE THE LEAD</p>
+      <p>调性匹配：艺术家 / 头部设计师 / 现象级生活方式博主</p>
+      <p><b>粉丝量级</b>：100w+</p>
+      <p><b>合作形式</b>：联名设计参与 / 主视觉露出 / 直播探店</p>
+      <p><b>预算</b>：30 万</p>
+    </div>
+    <div class="card">
+      <h4>腰部 × 5</h4>
+      <p style="font-size:12px;color:var(--ink-3);margin-bottom:8px">DEEP TOUCH</p>
+      <p>垂直领域：香水 / 插画 / 城市生活 / 设计 / 文艺青年</p>
+      <p><b>粉丝量级</b>：5w-30w</p>
+      <p><b>合作形式</b>：内容种草 / 现场体验 / 联名周边</p>
+      <p><b>预算</b>：25 万（5 万 × 5）</p>
+    </div>
+    <div class="card">
+      <h4>KOC × 30</h4>
+      <p style="font-size:12px;color:var(--ink-3);margin-bottom:8px">UGC TRIGGER</p>
+      <p>真实用户：设计学生 / 素人 / 文艺爱好者</p>
+      <p><b>粉丝量级</b>：1000-2w</p>
+      <p><b>合作形式</b>：到店体验 / UGC 激励 / 私域裂变</p>
+      <p><b>预算</b>：10 万（含样品）</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px">KOL Brief 模板（标准动作）</h3>
+  <table>
+    <thead><tr><th>要素</th><th>内容要求</th></tr></thead>
+    <tbody>
+      <tr><td>主题</td><td>必带 #LeLabo城市香氛 #设计师联名 #上海快闪</td></tr>
+      <tr><td>内容</td><td>至少 1 条真实体验过程 + 1 条产品特写 + 1 条个人感受</td></tr>
+      <tr><td>时长</td><td>小红书 9 图 / 抖音 60s+ / 视频号 3min+</td></tr>
+      <tr><td>发布</td><td>快闪期间内完成，曝光峰值对齐开业周</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================ -->
+<!-- P23 · 主视觉 -->
+<!-- ============================================ -->
+<section class="page" id="p23">
+  <div class="page-num">PAGE 23 / 30</div>
+  <div class="page-tag">PART 4 · EXECUTION</div>
+  <div class="section-header">
+    <div class="section-tag">21 · 主视觉设计</div>
+    <h2>主视觉 · <em>KV 占位稿</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div style="height:400px;background:linear-gradient(135deg,#1a1a1a 0%,#3a2820 60%,#7a4d3a 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+    <!-- 模拟主视觉 KV -->
+    <div style="position:absolute;top:30px;left:40px;color:var(--accent-2);font-size:11px;letter-spacing:4px">LE LABO × [DESIGNER] · SHANGHAI POP-UP</div>
+    <div style="text-align:center;color:#fff;z-index:2">
+      <div style="font-size:18px;color:var(--accent-2);letter-spacing:6px;margin-bottom:16px">穿上这座城市</div>
+      <div style="font-size:64px;font-weight:800;letter-spacing:-2px;line-height:1">LE LABO</div>
+      <div style="font-size:32px;font-weight:300;margin-top:8px;font-style:italic;color:var(--accent-2)">Shanghai</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.6);margin-top:20px;letter-spacing:2px">5.15 — 6.05 · 武康路 376 號</div>
+    </div>
+    <div style="position:absolute;bottom:30px;right:40px;color:rgba(255,255,255,.4);font-size:11px">© LE LABO × DESIGNER 2026</div>
+    <!-- 装饰元素 -->
+    <div style="position:absolute;top:60px;right:80px;width:80px;height:80px;border:1px solid rgba(196,169,133,.3);border-radius:50%"></div>
+    <div style="position:absolute;bottom:80px;left:120px;width:40px;height:40px;background:var(--accent-2);border-radius:50%;opacity:.6"></div>
+  </div>
+  <p style="margin-top:16px;font-size:12px;color:var(--ink-3);text-align:center">↑ 上方为方案主视觉占位稿，正式 KV 由 Figma 设计稿提供（P-F01）</p>
+</section>
+
+<!-- ============================================ ===
+<!-- P24 · 空间动线
+<!-- ============================================ -->
+<section class="page" id="p24">
+  <div class="page-num">PAGE 24 / 30</div>
+  <div class="page-tag">PART 4 · EXECUTION</div>
+  <div class="section-header">
+    <div class="section-tag">22 · 空间动线</div>
+    <h2>快闪空间 · <em>5 大功能区</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid" style="grid-template-columns:repeat(5,1fr);gap:10px;margin-top:20px">
+    <div class="card" style="text-align:center;border-top:3px solid var(--accent);padding:16px">
+      <div style="font-size:14px;color:var(--accent);font-weight:700">① 入口 · 城市墙</div>
+      <p style="font-size:11px;margin-top:8px">20㎡ · 视觉冲击<br>设计师手绘城市墙<br>打卡点</p>
+    </div>
+    <div class="card" style="text-align:center;border-top:3px solid var(--accent);padding:16px">
+      <div style="font-size:14px;color:var(--accent);font-weight:700">② 闻香区</div>
+      <p style="font-size:11px;margin-top:8px">40㎡ · 嗅觉引导<br>8 款香水闻香<br>专业调香师讲解</p>
+    </div>
+    <div class="card" style="text-align:center;border-top:3px solid var(--accent);padding:16px">
+      <div style="font-size:14px;color:var(--accent);font-weight:700">③ 调香区</div>
+      <p style="font-size:11px;margin-top:8px">30㎡ · 体验核心<br>手工调香展示<br>标签定制服务</p>
+    </div>
+    <div class="card" style="text-align:center;border-top:3px solid var(--accent);padding:16px">
+      <div style="font-size:14px;color:var(--accent);font-weight:700">④ 限定店</div>
+      <p style="font-size:11px;margin-top:8px">40㎡ · 转化区<br>联名香水+周边<br>限定编号发售</p>
+    </div>
+    <div class="card" style="text-align:center;border-top:3px solid var(--accent);padding:16px">
+      <div style="font-size:14px;color:var(--accent);font-weight:700">⑤ 出口 · UGC</div>
+      <p style="font-size:11px;margin-top:8px">20㎡ · 传播区<br>拍照打卡<br>小红书话题引导</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:24px">
+    <strong>🏛 空间设计原则</strong>
+    动线遵循"视觉冲击 → 嗅觉引导 → 体验沉淀 → 转化决策 → 二次传播"5 步漏斗，每一步都为下一步铺垫。
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P25 · 风险预案 -->
+<!-- ============================================ -->
+<section class="page" id="p25">
+  <div class="page-num">PAGE 25 / 30</div>
+  <div class="page-tag">PART 4 · EXECUTION</div>
+  <div class="section-header">
+    <div class="section-tag">23 · 风险预案</div>
+    <h2>3 大<em>风险 + 对策</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <table>
+    <thead><tr><th>风险类型</th><th>触发场景</th><th>影响</th><th>应对策略</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>① 舆情风险</b></td>
+        <td>设计师争议 / 联名抄袭 / 现场负面</td>
+        <td>高</td>
+        <td>① 设计师背景深度尽调 ② 危机公关预案 ③ 24h 监测机制</td>
+      </tr>
+      <tr style="background:#fdf9f3">
+        <td><b>② 库存风险</b></td>
+        <td>爆款断货 / 滞销库存</td>
+        <td>中</td>
+        <td>① 限量发售（800 瓶封顶）② 预订制降风险 ③ 滞销转周边</td>
+      </tr>
+      <tr>
+        <td><b>③ 现场风险</b></td>
+        <td>天气 / 安保 / 排队 / 卫生</td>
+        <td>中</td>
+        <td>① 雨天预案（室内通道）② 安保 8 人 / 日 ③ 预约制分流</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="grid grid-3" style="margin-top:20px">
+    <div class="card">
+      <h4>舆情监控 · 7×24</h4>
+      <p>小红书 / 微博 / 抖音关键词监测；负面 2h 内响应；合作方公关团队待命。</p>
+    </div>
+    <div class="card">
+      <h4>库存预警 · 5 日</h4>
+      <p>每日 22:00 库存盘点；低于 30% 启动限购；低于 10% 启动排队候补。</p>
+    </div>
+    <div class="card">
+      <h4>现场 SOP · 标准化</h4>
+      <p>11 项标准化流程（含预约/验票/导览/调香/结账/售后）；全员岗前培训 3 天。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P26 · 数据预测 -->
+<!-- ============================================ -->
+<section class="page" id="p26">
+  <div class="page-num">PAGE 26 / 30</div>
+  <div class="page-tag">PART 5 · RESULT & RETROSPECTIVE</div>
+  <div class="section-header">
+    <div class="section-tag">24 · 数据预测</div>
+    <h2>3 个月<em>数据预测</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-4" style="margin-top:20px">
+    <div class="stat"><div class="num">5000w</div><div class="label">总曝光</div></div>
+    <div class="stat"><div class="num">80w</div><div class="label">互动</div></div>
+    <div class="stat"><div class="num">1.2w</div><div class="label">到店</div></div>
+    <div class="stat"><div class="num">280w</div><div class="label">GMV</div></div>
+  </div>
+
+  <h3 style="margin-top:32px">月度预测曲线</h3>
+  <div class="bar-chart" style="margin-top:20px">
+    <div class="bar" style="height:30%" data-value="800w"><span>M1 预热</span></div>
+    <div class="bar" style="height:90%" data-value="2400w"><span>M2 爆发</span></div>
+    <div class="bar" style="height:55%" data-value="1500w"><span>M3 长尾</span></div>
+    <div class="bar" style="height:25%" data-value="700w" style="background:linear-gradient(180deg,#5a3a2a,#7a4d3a)"><span>M4 复购</span></div>
+  </div>
+  <div class="chart-legend">月曝光预测 · 单位（万）</div>
+
+  <table style="margin-top:32px">
+    <thead><tr><th>指标</th><th>保守值</th><th>基准值</th><th>乐观值</th><th>行业基准</th></tr></thead>
+    <tbody>
+      <tr><td>到店转化率</td><td>8%</td><td><b>12%</b></td><td>18%</td><td>10%</td></tr>
+      <tr><td>客单价</td><td>¥1280</td><td><b>¥1480</b></td><td>¥2100</td><td>¥1300</td></tr>
+      <tr><td>复购率</td><td>8%</td><td><b>15%</b></td><td>22%</td><td>12%</td></tr>
+      <tr><td>ROI</td><td>1:0.7</td><td><b>1:0.93</b></td><td>1:1.4</td><td>1:0.8</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================ -->
+<!-- P27 · 场景对比 -->
+<!-- ============================================ -->
+<section class="page" id="p27">
+  <div class="page-num">PAGE 27 / 30</div>
+  <div class="page-tag">PART 5 · RESULT & RETROSPECTIVE</div>
+  <div class="section-header">
+    <div class="section-tag">25 · 场景对比</div>
+    <h2>自营 / 代理 / <em>联名</em> · 三模式对比</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <table>
+    <thead><tr><th>维度</th><th>自营快闪</th><th>代理合作</th><th>设计师联名 ⭐</th></tr></thead>
+    <tbody>
+      <tr><td>启动成本</td><td>高（200w+）</td><td>中（100w）</td><td><b>中（200w）</b></td></tr>
+      <tr><td>内容产出</td><td>品牌单一</td><td>常规商业</td><td><b>艺术溢价</b></td></tr>
+      <tr><td>话题性</td><td>中</td><td>低</td><td><b>高</b></td></tr>
+      <tr><td>目标人群匹配</td><td>泛人群</td><td>商业人群</td><td><b>创意人群</b></td></tr>
+      <tr><td>复购率</td><td>8-12%</td><td>10-15%</td><td><b>15-22%</b></td></tr>
+      <tr><td>品牌资产沉淀</td><td>弱</td><td>无</td><td><b>强</b></td></tr>
+      <tr><td>可复用性</td><td>低</td><td>低</td><td><b>高</b></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin-top:24px">
+    <strong>🎯 联名模式的不可替代性</strong>
+    设计师联名 = 故事独特性 × 内容传播力 × 用户情感连接——三者叠加形成竞品难以复制的护城河。
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P28 · 品牌沉淀 -->
+<!-- ============================================ -->
+<section class="page" id="p28">
+  <div class="page-num">PAGE 28 / 30</div>
+  <div class="page-tag">PART 5 · RESULT & RETROSPECTIVE</div>
+  <div class="section-header">
+    <div class="section-tag">26 · 品牌沉淀</div>
+    <h2>6 个月后的<em>品牌资产</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid grid-3" style="margin-top:20px">
+    <div class="card">
+      <h4>📊 用户资产</h4>
+      <ul>
+        <li>私域沉淀 8,000+ 用户</li>
+        <li>会员复购率 22%</li>
+        <li>高净值用户占比 35%</li>
+        <li>UGC 笔记 500+ 篇</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>📰 媒体资产</h4>
+      <ul>
+        <li>自发媒体曝光 50+ 篇</li>
+        <li>行业自媒体深度报道 5 篇</li>
+        <li>设计师个人渠道曝光 100w+</li>
+        <li>种草笔记收录 800+ 条</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>💎 品牌资产</h4>
+      <ul>
+        <li>品牌搜索指数 +180%</li>
+        <li>中国 Le Labo 认知度提升</li>
+        <li>可为下一城市复制方法论</li>
+        <li>为长期联名积累合作池</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quote" style="margin-top:32px">
+    "一个成功的快闪不是结束，<br>而是下一个快闪的起点。"
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P29 · 方法论 -->
+<!-- ============================================ -->
+<section class="page" id="p29">
+  <div class="page-num">PAGE 29 / 30</div>
+  <div class="page-tag">PART 5 · RESULT & RETROSPECTIVE</div>
+  <div class="section-header">
+    <div class="section-tag">27 · METHODOLOGY</div>
+    <h2>方法论 · <em>可迁移模型</em></h2>
+    <div class="section-line"></div>
+  </div>
+
+  <p class="lead">从 Le Labo 案例中提炼的"叙事型快闪 4 步法"——可迁移到美妆、餐饮、服饰等多个品类。</p>
+
+  <div class="grid grid-2" style="margin-top:24px">
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h4>① 找到品牌的"叙事母体"</h4>
+      <p>每个品牌都有一个可被放大的故事原型：城市 / 工艺 / 创始人 / 社群。Le Labo 的母体是<strong>"城市"</strong>。</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h4>② 找到"放大器"：跨界合作者</h4>
+      <p>一个人无法同时讲好"商业+艺术+城市"三个故事，需要找到具备其中一种能力的合作者来放大。</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h4>③ 把"体验"做成"可分享的内容"</h4>
+      <p>每一个空间动线触点都要考虑"拍照分享价值"——这是私域传播的发动机。</p>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent)">
+      <h4>④ 把"流量"沉淀为"用户资产"</h4>
+      <p>曝光只是过程指标，真正的资产是私域用户数和复购率。短期 ROI 不重要，长期复购才重要。</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:24px">
+    <strong>🎯 适用场景</strong>
+    美妆个护 / 咖啡茶饮 / 生活方式品牌 / 设计师集合店 / 高端餐饮——任何"重故事、重体验"品类均可复用。
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- P30 · 致谢反思 -->
+<!-- ============================================ -->
+<section class="end-page" id="p30">
+  <div>
+    <div class="page-tag" style="color:var(--accent-2);font-size:11px;letter-spacing:3px">END · THANK YOU</div>
+    <h2>THANK YOU</h2>
+    <p>感谢您阅读至此</p>
+    <p>本方案为 2026 校园招聘作品集 · Project 02</p>
+    <div class="signature">— WorkBuddy × Le Labo</div>
+    <p style="margin-top:30px;font-size:12px;color:rgba(255,255,255,.4)">📧 联系方式 / 🔗 个人作品集链接 / 📂 项目源文件</p>
+  </div>
+</section>
+
+<script>
+// Scrollspy for nav
+const navLinks = document.querySelectorAll('.nav a');
+const sections = document.querySelectorAll('.page, .cover, .end-page');
+
+window.addEventListener('scroll',()=>{
+  let current = '';
+  sections.forEach(s=>{
+    const top = s.offsetTop - 100;
+    if(window.scrollY >= top) current = s.id;
+  });
+  navLinks.forEach(l=>{
+    l.classList.remove('active');
+    if(l.getAttribute('href') === '#' + current) l.classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>
