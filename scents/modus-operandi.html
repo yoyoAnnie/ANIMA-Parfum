@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festive Hearth &amp; Roasted Chestnut — Modus operandi — ANIMA 不忘</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--paper:#F7F4EE;--ink:#1C1A17;--khaki:#9E8E7A;--parchment:#C8B89A;--dark:#2C2820;--faint:#EDE9E1;--fell:'IM Fell English',serif;--mono:'IBM Plex Mono',monospace}
+body{background:var(--paper);color:var(--ink);font-family:var(--mono);font-size:13px;line-height:1.7}
+a{color:var(--ink)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 48px;background:rgba(247,244,238,.95);border-bottom:1px solid var(--parchment)}
+nav .wordmark{font-family:var(--fell);font-size:17px;text-decoration:none}
+nav .links{display:flex;gap:28px}
+nav .links a{font-size:10px;letter-spacing:.12em;text-decoration:none;opacity:.55}
+nav .links a:hover{opacity:1}
+.wrap{max-width:1100px;margin:0 auto;padding:0 48px}
+.hero{padding:80px 0 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;border-bottom:1px solid var(--parchment)}
+.hero h1{font-family:var(--fell);font-size:clamp(42px,5vw,72px);font-weight:400;line-height:1.08;margin-bottom:16px}
+.hero h1 i{color:var(--khaki)}
+.hero .hanzi{font-family:var(--fell);font-style:italic;font-size:22px;color:var(--khaki);margin-bottom:32px}
+.hero p{font-size:12px;opacity:.75;line-height:2;max-width:440px;margin-bottom:32px}
+.btn{display:inline-block;font-size:10px;letter-spacing:.15em;padding:13px 28px;text-decoration:none;border:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+.btn.outline{background:transparent;color:var(--ink);border-color:var(--parchment)}
+section{padding:80px 0;border-bottom:1px solid var(--parchment)}
+.tag{font-size:9px;color:var(--khaki);letter-spacing:.18em;margin-bottom:20px}
+h2{font-family:var(--fell);font-size:clamp(30px,4vw,52px);font-weight:400;line-height:1.12;margin-bottom:16px}
+h2 i{color:var(--khaki)}
+.lede{font-family:var(--fell);font-style:italic;font-size:17px;color:var(--khaki)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--parchment);border:1px solid var(--parchment);margin-top:40px}
+.cell{background:var(--paper);padding:32px;display:flex;flex-direction:column;gap:10px}
+.cell:hover{background:var(--faint)}
+.cell a.cardlink{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px}
+img.bottle,.placeholder{width:100%;height:380px;object-fit:contain;background:#fff}
+.placeholder{display:flex;align-items:center;justify-content:center;border:1px dashed var(--parchment);color:var(--khaki);font-size:11px;letter-spacing:.1em;text-align:center;padding:20px}
+.cell .name{font-family:var(--fell);font-size:20px;line-height:1.25}
+.cell .phil{font-size:10px;letter-spacing:.1em;color:var(--khaki)}
+.cell .meta{font-size:11px;opacity:.7;line-height:1.9}
+.cell .price{font-size:10px;color:var(--khaki);letter-spacing:.08em}
+.story-hero{padding:60px 0;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;border-bottom:1px solid var(--parchment)}
+.story-hero img.bottle,.story-hero .placeholder{height:560px}
+.story h1{font-family:var(--fell);font-size:clamp(34px,4vw,54px);font-weight:400;line-height:1.12}
+.story h2.phil{font-family:var(--mono);font-size:13px;letter-spacing:.12em;color:var(--khaki);margin:12px 0 28px}
+.story .persona{font-size:11px;color:var(--khaki);margin-bottom:24px;line-height:1.9}
+.story .notes{font-size:11px;line-height:2;border-top:1px solid var(--parchment);border-bottom:1px solid var(--parchment);padding:20px 0;margin-bottom:40px}
+.memoir p{margin-bottom:20px;font-size:13px;line-height:2;max-width:640px}
+.memoir h3{font-family:var(--fell);font-size:24px;font-weight:400;margin:48px 0 20px}
+.memoir .cn{font-family:'Kaiti SC','KaiTi',serif;font-size:15px}
+.moment{margin-top:48px}
+.moment .placeholder{height:280px}
+.moment img,.extra img{width:100%;height:auto;display:block;margin-bottom:24px}
+.extra{margin-top:48px}
+.extra .tag,.moment .tag{font-size:10px;letter-spacing:.14em;color:var(--khaki);margin-bottom:16px}
+.backnav{display:flex;justify-content:space-between;padding:32px 0;font-size:11px}
+.backnav a{text-decoration:none;opacity:.7}
+.draftnote{font-size:10px;color:var(--khaki);letter-spacing:.06em;margin-top:16px}
+footer{background:var(--ink);color:var(--paper);padding:60px 48px 32px}
+footer .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+footer a{color:var(--paper);opacity:.4;text-decoration:none;font-size:11px}
+footer a:hover{opacity:.85}
+footer .brand{font-family:var(--fell);font-size:24px;margin-bottom:8px}
+footer .copy{font-size:10px;opacity:.25}
+@media(max-width:768px){.hero,.story-hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}nav,.wrap{padding-left:24px;padding-right:24px}.story-hero img.bottle,.story-hero .placeholder{height:420px}}
+</style>
+</head>
+<body>
+<nav>
+<a class="wordmark" href="../index.html">ANIMA 不忘</a>
+<div class="links">
+<a href="../collections.html">Collection</a>
+<a href="../index.html#signature">Signature</a>
+<a href="../index.html#discovery">Discovery Set</a>
+</div>
+</nav>
+
+<div class="wrap story">
+<div class="story-hero">
+<div><img class="bottle" src="../assets/bottles/modus-operandi.jpg" alt="ANIMA modus-operandi bottle"></div>
+<div>
+<h1>Festive Hearth &amp; Roasted Chestnut</h1>
+<h2 class="phil">Modus operandi</h2>
+<div class="persona">Persona: the Christmas traditionalist — the homebody, the one who believes December is a feeling, not a month.</div>
+<div class="notes">Profile: Warm Spicy, Heavy Gourmand<br>Top: Pink pepper, Lemon | Middle: Orange blossom, Cedarwood | Base: Vanilla, Sandalwood, Amber</div>
+<p><a class="btn" href="../collections/rooms.html">Back to Rooms, Rain &amp; Smoke</a></p>
+</div>
+</div>
+<div class="memoir">
+<p>Every family has a way of doing Christmas that would look like chaos to anyone else and feels like home to them, and ours is exactly that kind of chaos. It is Christmas, and the air is thick with the scent of roasting chestnuts and the sweet, smoky breath of the hearth, and we are doing what we always do: making hot cocoa, the steam fogging up the kitchen windows, and playing Carcassonne with the tiles clicking all over the table, or watching a movie together with everyone talking over the dialogue, or attempting a recipe that we will inevitably improvise. You could do these things in July, in principle, but it is not the same, because the fireplace is going and the chestnuts are roasting until the whole room smells like smoke and sugar, sweet in the heat, and the orange peel and clove hang in the air over everyone&#x27;s voices. The fire pops. Someone laughs. The cocoa is too hot, and we drink it anyway. It is the smell of togetherness, of a season that asks nothing of you but to be present, to sit in the glow, to let the year end in warmth — because the chaos is the method, and the method is how we know we belong to each other.</p>
+<h3>十一、节日炉火与烤栗子</h3><div class="cn"><p>圣诞前后，家里会烤栗子。栗子用刀划一道口，丢进烤箱，过一会儿就能听见“噗”的一声，壳裂开了。整个屋子都是那种焦焦的、粉粉的甜味，混着壁炉里木头的烟。</p><p>我们在茶几上铺开卡卡颂，棋子摆得乱七八糟。热可可煮在锅里，牛奶冒泡的时候要赶紧搅，不然糊底。窗外天黑得早，四点多就暗了，但屋里灯亮着，火也亮着，谁也没急着走。</p><p>这些东西夏天也能做。但夏天做不是这个味道。夏天的热可可是多余的，炉火是荒唐的，栗子烤出来放在桌上没人想吃。十二月不一样。十二月把人都赶回屋里，赶在一起，外头越冷，里头越不想散。</p></div>
+<div class="moment">
+<div class="tag">Memory Moment Photo</div>
+<div class="placeholder">Conceptual memory-moment photo to come — found and shot by the founder, with Top / Heart / Base notes overlaid</div>
+</div>
+
+</div>
+<div class="backnav"><a href="de-facto.html">← Macerated Grapes, Bleached Cork</a><a href="non-sequitur.html">Dark Slate, Rain-Struck Glass →</a></div>
+</div>
+
+<footer>
+<div class="fgrid">
+<div><div class="brand">ANIMA 不忘</div><p style="font-size:11px;opacity:.35;line-height:1.9;max-width:280px">Scent makes people recall the memory fragments attached to it, and makes memory eternal. Every scent is a memory and an emotion.</p></div>
+<div><a href="../collections.html">Explore the Collection</a></div>
+<div><a href="../index.html">Main Page</a></div>
+</div>
+<div class="copy">© 2026 ANIMA Parfums. All compositions reserved.</div>
+</footer>
+</body>
+</html>
